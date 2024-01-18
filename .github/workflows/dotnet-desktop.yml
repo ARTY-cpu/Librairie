@@ -20,11 +20,11 @@ jobs:
 
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: Librairie\Librairie\Librairie
+      working-directory: Librairie\Librairie
 
     - name: Build
       run: dotnet build --configuration Release
-      working-directory: Librairie\Librairie\Librairie
+      working-directory: Librairie\Librairie
 
   publish:
     runs-on: windows-latest
