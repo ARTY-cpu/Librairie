@@ -34,16 +34,16 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Release
-        path: bin\Release
+        path:  Librairie\bin\Release\net6.0-windows
     - name: List files in bin/Release
       run: dir
       
-    - name: Download Release Artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: Release
-        path: bin\Release
-        working-directory: Librairie\Librairie
+    #- name: Download Release Artifact
+     # uses: actions/download-artifact@v2
+     # with:
+       # name: Release
+      #  path: bin\Release
+        #working-directory: Librairie\Librairie
 
     - name: Create Release
       id: create_release
