@@ -35,6 +35,8 @@ jobs:
       with:
         name: Release
         path: Librairie\Librairie\bin\Release
+    - name: List files in bin/Release
+      run: ls Librairie\Librairie\bin\Release
 
   deploy:
     runs-on: windows-latest
