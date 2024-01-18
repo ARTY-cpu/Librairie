@@ -49,6 +49,7 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
+        token: ${{ github.token }}
         file: Librairie\Librairie\Librairie\Librairie\bin\Release\net6.0-windows\*
         tag_name: ${{ github.run_number }}
         release_name: Release ${{ github.run_number }}
