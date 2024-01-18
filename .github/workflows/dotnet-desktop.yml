@@ -27,16 +27,16 @@ jobs:
       run: dotnet build --configuration Release
       working-directory: Librairie\Librairie
 
-    - name: List files in Librairie\bin\Release\net6.0-windows
-      run: dir /a Librairie\bin\Release\net6.0-windows
+     #- name: List files in Librairie\bin\Release\net6.0-windows
+      # run: dir /a Librairie\bin\Release\net6.0-windows
       
-    - name: Upload Release Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: Release
-        path:  Librairie\bin\Release\net6.0-windows
-    - name: List files in bin/Release
-      run: dir
+     #- name: Upload Release Artifact
+      # uses: actions/upload-artifact@v2
+      # with:
+      #   name: Release
+       #  path:  Librairie\bin\Release\net6.0-windows
+     #- name: List files in bin/Release
+      # run: dir
       
     #- name: Download Release Artifact
      # uses: actions/download-artifact@v2
@@ -49,6 +49,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       with:
+        file: Librairie\Librairie\Librairie\Librairie\bin\Release\net6.0-windows\*
         tag_name: ${{ github.run_number }}
         release_name: Release ${{ github.run_number }}
         draft: false
