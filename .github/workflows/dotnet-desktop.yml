@@ -28,7 +28,7 @@ jobs:
       working-directory: Librairie\Librairie
 
     - name: List files in bin/Release
-      run: ls -l
+      run: dir /a
       
     - name: Upload Release Artifact
       uses: actions/upload-artifact@v2
@@ -36,7 +36,7 @@ jobs:
         name: Release
         path: bin\Release
     - name: List files in bin/Release
-      run: ls bin\Release
+      run: dir
       
     - name: Download Release Artifact
       uses: actions/download-artifact@v2
