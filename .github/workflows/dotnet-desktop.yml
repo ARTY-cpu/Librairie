@@ -27,10 +27,9 @@ jobs:
       run: dotnet build --configuration Release
       working-directory: Librairie\Librairie
 
-  publish:
-    runs-on: windows-latest
-    needs: build
-    steps:
+    - name: List files in bin/Release
+      run: ls -l
+      
     - name: Upload Release Artifact
       uses: actions/upload-artifact@v2
       with:
@@ -38,11 +37,7 @@ jobs:
         path: bin\Release
     - name: List files in bin/Release
       run: ls bin\Release
-
-  deploy:
-    runs-on: windows-latest
-    needs: publish
-    steps:
+      
     - name: Download Release Artifact
       uses: actions/download-artifact@v2
       with:
