@@ -47,9 +47,7 @@ jobs:
 
     - name: Create Release
       id: create_release
-      uses: actions/create-release@v1
-      env: 
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      uses: softprops/action-gh-release@v1
       with:
         file: Librairie\Librairie\Librairie\Librairie\bin\Release\net6.0-windows\*
         tag_name: ${{ github.run_number }}
