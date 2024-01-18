@@ -27,8 +27,8 @@ jobs:
       run: dotnet build --configuration Release
       working-directory: Librairie\Librairie
 
-    - name: List files in bin/Release
-      run: dir /a
+    - name: List files in Librairie\bin\Release\net6.0-windows
+      run: dir /a Librairie\bin\Release\net6.0-windows
       
     - name: Upload Release Artifact
       uses: actions/upload-artifact@v2
