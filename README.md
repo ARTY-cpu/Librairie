@@ -1,8 +1,15 @@
 # Windows APP CRUD
 
-#Requis :
+#Prérequis :
 
 -Docker
--Créer l'image Docker avec la commande :
+Vous pouvez installer docker en suivant le lien : https://www.docker.com/products/docker-desktop/
 
-le Build avec Visual Studio
+-Créer l'image Docker avec les commandes :
+
+```bash
+docker build -t ServerSQL .
+docker run -p 1433:1433 ServerSQL
+``` 
+
+Récupérer l'image depuis l'onglet Releases de Github.
