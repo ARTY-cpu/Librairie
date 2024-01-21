@@ -52,7 +52,7 @@ jobs:
       id: upload-release-asset
       run: |
         $uploadUrl = "${{ steps.create_release.outputs.upload_url }}"
-        $files = Get-ChildItem -Path .\Librairie\Librairie\bin\Release\net6.0-windows\*
+        $files = Get-ChildItem -Path .\Librairie\Librairie\bin\Release\net6.0-windows\* -File
     
         foreach ($file in $files) {
           Write-Host "Uploading $($file.FullName)..."
