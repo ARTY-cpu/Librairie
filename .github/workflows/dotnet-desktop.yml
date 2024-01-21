@@ -50,17 +50,12 @@ jobs:
       
     - name: Upload Release Asset
       id: upload-release-asset
-      run: |
-        $uniqueName = "Librairie-${{ github.run_number }}.exe"
-        $uploadUrl = "https://uploads.github.com/repos/ARTY-cpu/Librairie/releases/137900969/assets?name=$uniqueName"
-        $files = Get-ChildItem -Path .\Librairie\Librairie\bin\Release\net6.0-windows\* -File
-
-        foreach ($file in $files) {
-          Write-Host "Uploading $($file.FullName)..."
-          Invoke-RestMethod -Uri $uploadUrl -Method Post -Headers @{
-            Authorization = "token $env:GITHUB_TOKEN"
-          } -InFile $file.FullName -ContentType 'application/octet-stream'
-          Write-Host "Uploaded $($file.FullName)."
-        }
+      uses: actions/upload-release-asset@v1
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: Librairie\Librairie\bin\Release\net6.0-windows\Librairie.exe
+        asset_name: Librairie.exe
+        asset_content_type: application/octet-stream
+        
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
