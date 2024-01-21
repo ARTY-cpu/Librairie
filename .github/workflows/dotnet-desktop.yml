@@ -30,7 +30,7 @@ jobs:
     - name: Debug Environment Variables and File Listing
       run: |
         env
-        dir /S Librairie\Librairie\bin\Release\net6.0-windows
+        Get-ChildItem -Path 'Librairie\Librairie\bin\Release\net6.0-windows' -Recurse
 
     - name: Create Release
       id: create_release
