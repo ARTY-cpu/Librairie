@@ -61,8 +61,5 @@ jobs:
           } -InFile $file.FullName -ContentType 'application/octet-stream'
           Write-Host "Uploaded $($file.FullName)."
         }
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
