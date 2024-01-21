@@ -53,8 +53,8 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: Librairie\Librairie\bin\Release\net6.0-windows\*
-        asset_name: Librairie.exe
+        asset_path: Librairie\Librairie\bin\Release\net6.0-windows
+        asset_name: Librairie
         asset_content_type: application/octet-stream
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
