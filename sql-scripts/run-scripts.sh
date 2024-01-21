@@ -22,3 +22,5 @@ done
 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/CreateBook.sp.sql
 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/DeleteBook.sp.sql
 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/UpdateBook.sp.sql
+
+echo "Server running. Database ready."
