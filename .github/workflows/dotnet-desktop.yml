@@ -50,11 +50,15 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        files: Librairie\Librairie\Librairie\Librairie\bin\Release\net6.0-windows\*
+        files: Librairie\Librairie\bin\Release\net6.0-windows\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
+
+    - name: Debug Environment Variables
+      run: |
+        env
 
     - name: Upload Release Asset
       id: upload-release-asset
