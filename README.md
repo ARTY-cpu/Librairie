@@ -1,10 +1,8 @@
 # Windows APP CRUD
 
-## Installation de la BDD
+#Requis :
 
-- Utiliser SQLEXPRESS
-- Paramétrer dans le fichier Book.cs le nom utilisateur, mdp et nom machine
-- Créer BDD LIBRARY
-- Faire tourner les scripts sql dans Database
+-Docker
+-Créer l'image Docker avec la commande :
 
 le Build avec Visual Studio
