@@ -1,3 +1,7 @@
+USE master;
+GO
+USE LIBRARY;
+GO
 IF EXISTS( SELECT name
 	From sysobjects
 	WHERE name = 'UpdateBook'

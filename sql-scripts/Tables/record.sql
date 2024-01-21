@@ -1,3 +1,8 @@
+USE master;
+GO
+USE LIBRARY;
+GO
+
 --CATEGORY--------------------------------------------
 INSERT INTO CATEGORY (CategoryName) VALUES ('Science')
 GO

@@ -1,3 +1,7 @@
+USE master;
+GO
+USE LIBRARY;
+GO
 CREATE PROCEDURE CreateBook
 @Title varchar(50),
 @Isbn varchar(20),
