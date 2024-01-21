@@ -16,9 +16,9 @@ while ! check_sql_server; do
     sleep 1
 done
 
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/Tables/table.sql
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/Tables/record.sql
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/View/GetBookData.view.sql
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/Stored_Procedures/CreateBook.sp.sql
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/Stored_Procedures/DeleteBook.sp.sql
-/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Magixtime!To75 -d master -i sql-scripts/Stored_Procedures/UpdateBook.sp.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Tables/table.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Tables/record.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/View/GetBookData.view.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/CreateBook.sp.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/DeleteBook.sp.sql
+/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P $SQL_PASSWORD -d master -i sql-scripts/Stored_Procedures/UpdateBook.sp.sql
