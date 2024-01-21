@@ -56,9 +56,10 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Debug Environment Variables
+    - name: Debug Environment Variables and File Listing
       run: |
         env
+        dir /S Librairie\Librairie\bin\Release\net6.0-windows
 
     - name: Upload Release Asset
       id: upload-release-asset
