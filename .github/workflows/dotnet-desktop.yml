@@ -37,14 +37,16 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: Librairie\Librairie\bin\Release\net6.0-windows\**
+        files: Librairie\Librairie\bin\Release\net6.0-windows\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
+    - name: List Files in Release Directory
+      run: Get-ChildItem -Path 'Librairie\Librairie\bin\Release\net6.0-windows\' -Recurse
       
     - name: Upload Release Asset
       id: upload-release-asset
