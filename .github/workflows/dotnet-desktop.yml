@@ -5,10 +5,12 @@ on:
     branches:
       - master
   workflow_dispatch:
-
+  
 jobs:
   build:
     runs-on: windows-latest
+    permissions:
+      contents: read
 
     steps:
     - name: Checkout repository
@@ -43,6 +45,7 @@ jobs:
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       
     - name: Upload Release Asset
       id: upload-release-asset
