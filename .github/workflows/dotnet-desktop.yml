@@ -53,8 +53,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: List Files in Publish Directory
-      run: Get-ChildItem -Path "Librairie/Librairie" -Recurse
+    - name: Debug Environment Variables and File Listing
+      run: |
+        env
+        Get-ChildItem -Path 'Librairie\Librairie' -Recurse
 
     - name: Create Release
       id: create_release
