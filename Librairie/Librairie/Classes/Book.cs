@@ -14,7 +14,7 @@ namespace Librairie.Classes
         public string? PublisherName { get; set; }
         public string? AuthorName { get; set; }
         public string? CategoryName { get; set; }
-        string connectionString = "Data Source=localhost,1433;Initial Catalog = Library; User ID = sa; Password=magic;";
+        string connectionString = "Data Source=tcp:localhost,1433;Initial Catalog = Library; User ID = sa; Password=Magixtime!To75;TrustServerCertificate=true;";
 
         public List<Book> GetBooks()
         {
