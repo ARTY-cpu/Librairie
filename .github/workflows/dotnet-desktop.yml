@@ -53,22 +53,30 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: List Files in Publish Directory
+      run: |
+        env
+        Get-ChildItem -Path "Librairie\publish" -Recurse
+
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: Librairie\Librairie\publish\*
+        files: Librairie\publish\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Checkout repository after release creation
+      uses: actions/checkout@v2
         
     - name: List Files in Publish Directory
       run: |
         env
-        Get-ChildItem -Path "$env:GITHUB_WORKSPACE\Librairie\publish" -Recurse
+        Get-ChildItem -Path "Librairie\publish" -Recurse
 
     - name: Upload Release Asset
       id: upload-release-asset
