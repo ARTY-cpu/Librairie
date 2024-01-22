@@ -68,7 +68,7 @@ jobs:
     - name: List Files in Publish Directory
       run: |
         env
-        Get-ChildItem -Path "$env:GITHUB_WORKSPACELibrairie\Librairie\publish" -Recurse
+        Get-ChildItem -Path "$env:GITHUB_WORKSPACE\Librairie\Librairie\publish" -Recurse
 
     - name: Upload Release Asset
       id: upload-release-asset
