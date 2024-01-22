@@ -64,15 +64,11 @@ jobs:
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    #- name: List Files in Release Directory
-    # run: |
-    #   env
-    #   Get-ChildItem -Path $env:GITHUB_WORKSPACE\Librairie\Librairie\bin\Release\net6.0-windows\win-x64 -Recurse
-    #- name: List Files in Publish Directory
-    #  run: |
-    #    env
-    #    Get-ChildItem -Path $env:GITHUB_WORKSPACE\Librairie\Librairie\publish -Recurse
+        
+    - name: List Files in Publish Directory
+      run: |
+        env
+        Get-ChildItem -Path $env:GITHUB_WORKSPACE\Librairie\Librairie\ -Recurse
 
     - name: Upload Release Asset
       id: upload-release-asset
