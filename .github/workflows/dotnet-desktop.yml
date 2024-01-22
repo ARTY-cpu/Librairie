@@ -62,8 +62,7 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: publish\*
-        working-directory: Librairie\Librairie
+        files: Librairie\Librairie\publish\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
@@ -79,8 +78,7 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        working-directory: Librairie\Librairie
-        asset_path: publish\Librairie.exe
+        asset_path: Librairie\Librairie\publish\Librairie.exe
         asset_name: Librairie.exe
         asset_content_type: application/octet-stream
       env:
