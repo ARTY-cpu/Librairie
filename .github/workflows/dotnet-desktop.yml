@@ -42,7 +42,7 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: Publish
-      run: dotnet publish -r win-x64 -c Release -o Librairie\Librairie\publish --self-contained
+      run: dotnet publish -r win-x64 -c Release -o publish --self-contained
       working-directory: Librairie\Librairie
 
   release:
@@ -60,7 +60,7 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: Librairie\Librairie\*
+        files: Librairie\Librairie\publish\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
@@ -76,7 +76,7 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: Librairie/Librairie/publish/Librairie.exe
+        asset_path: Librairie\Librairie\publish\Librairie.exe
         asset_name: Librairie.exe
         asset_content_type: application/octet-stream
       env:
