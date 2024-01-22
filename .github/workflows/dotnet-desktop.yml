@@ -54,13 +54,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: List Files in Publish Directory
-      run: Get-ChildItem -Path "Librairie/Librairie/publish" -Recurse
+      run: Get-ChildItem -Path "Librairie/Librairie" -Recurse
 
     - name: Create Release
       id: create_release
       uses: softprops/action-gh-release@v1
       with:
-        files: Librairie\Librairie\publish\*
+        files: Librairie\Librairie\*
         tag_name: ${{ github.run_number }}
         name: Release ${{ github.run_number }}
         draft: false
