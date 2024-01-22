@@ -24,8 +24,8 @@ jobs:
       run: dotnet restore
       working-directory: Librairie\Librairie
 
-    - name: Build
-      run: dotnet build --configuration Release
+    - name: Publish
+      run: dotnet publish -r win-x64 -c Release -o publish
       working-directory: Librairie\Librairie
 
     - name: Debug Environment Variables and File Listing
