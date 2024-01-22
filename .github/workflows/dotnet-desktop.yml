@@ -75,7 +75,7 @@ jobs:
       uses: actions/upload-release-asset@v1
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ env.GITHUB_WORKSPACE }}\Librairie\Librairie\publish\Librairie.exe
+        asset_path: Librairie/Librairie/publish/Librairie.exe
         asset_name: Librairie.exe
         asset_content_type: application/octet-stream
       env:
